@@ -10,7 +10,7 @@
 <a href="table.html">Таблица мониторинга</a>
 		<h1 align="center">Таблица мониторинга</h1>
 		<p align="center">
-			В данной таблице представлены данные о пришедших и ушедших судах за последнии недели
+			В данной таблице представлены данные о пришедших и ушедших судах за октябрь 2023
 		</p>
 		
 		<details>
@@ -23,13 +23,12 @@
 						<th>Значение по Y</th>
 					</tr>
 					<tr>
-						<td><input type="radio" name="hor" value="hor1"> 1 <br>
-						<input type="radio" name="hor" value="hor2"> 2 <br>
-						<input type="radio" name="hor" value="hor3"> 3 <br>
+						<td><input type="radio" name="hor" value="hor1"> Дата Прибытия <br>
+						<input type="radio" name="hor" value="hor2"> Дата отбытия <br>
 						</td>
-						<td><input type="radio" name="ver" value="ver1"> 1 <br>
-						<input type="radio" name="ver" value="ver2"> 2 <br>
-						<input type="radio" name="ver" value="ver3"> 3 <br>
+						<td><input type="radio" name="ver" value="ver1"> Общая загруженности <br>
+						<input type="radio" name="ver" value="ver2"> Общая вместимости <br>
+						<input type="radio" name="ver" value="ver3"> Общее колиество кораблей <br>
 						</td>
 					</tr>
 				</table>
@@ -42,9 +41,16 @@
 		<summary> Фильтр </summary>
 			<form>
 				<p>
-				Фильтр1: <input type="text" name="fil1" id="fil1"><br>
-				Фильтр2: <input type="text" name="fil2" id="fil2"><br>
-				Фильтр3: <input type="text" name="fil3" id="fil3"><br>
+				Фильтр по ИМО судна: <input type="text" name="fil1" id="fil1"><br>
+				Фильтр по модели судна: <input type="text" name="fil2" id="fil2"><br>
+				Фильтр по типу судна: <select name="level1">
+					<option value="fil3_0"> Пассажирское </option>
+					<option value="fil3_1" selected> Грузовое </option>
+					</select><br>
+				Фильтр по Дате прибытия: <input type="date" min="2023-10-01" max="2023-10-31" name="fil4" id="fil4"><br>
+				Фильтр по Дате отбытия: <input type="date" min="2023-10-01" max="2023-10-31" name="fil5" id="fil5"><br>
+				Фильтр по вместимости: В диапозоне от<input type="number" name="fil6_1" id="fil6_1"> до <input type="number" name="fil6_2" id="fil6_2"><br>
+				Фильтр по нагруженности: В диапозоне от<input type="number" name="fil7_1" id="fil7_1"> до <input type="number" name="fil7_2" id="fil7_2"><br>
 				<input type="button" value="Отфильтровать">
 				</p>
 			</form>
@@ -56,15 +62,27 @@
 				<p>
 				Первый уровень:
 				<select name="level1">
-					<option value="l1_0"> 0 </option>
-					<option value="l1_1" selected> 1 </option>
-					<option value="l1_2"> 2 </option>
+					<option value="l1_0"> Дате прибытия </option>
+					<option value="l1_1"> Дате отбытия </option>
+					<option value="l1_2"> Вместимости судна </option>
+					<option value="l1_3"> Нагруженности судна </option>
+					<option value="l1_4"> ИМО судна </option>
 				</select> <br>
 				Второй уровень:
 				<select name="level2">
-					<option value="l2_0"> 0 </option>
-					<option value="l2_1" selected> 1 </option>
-					<option value="l2_2"> 2 </option>
+					<option value="l2_0"> Дате прибытия </option>
+					<option value="l2_1"> Дате отбытия </option>
+					<option value="l2_2"> Вместимости судна </option>
+					<option value="l2_3"> Нагруженности судна </option>
+					<option value="l2_4"> ИМО судна </option>
+				</select> <br>
+				Третий уровень:
+				<select name="level3">
+					<option value="l3_0"> Дате прибытия </option>
+					<option value="l3_1"> Дате отбытия </option>
+					<option value="l3_2"> Вместимости судна </option>
+					<option value="l3_3"> Нагруженности судна </option>
+					<option value="l3_4"> ИМО судна </option>
 				</select> <br>
 				<input type="button" value="Отcортировать">
 				</p>
